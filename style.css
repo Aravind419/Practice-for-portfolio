@@ -29,6 +29,11 @@
 
     
 }
+section{
+    padding: 10rem 12%;
+    width: 100vw;
+    height: 100vh;
+}
 .navbar a{
     color: var(--text-color);
 }
