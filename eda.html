@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDA CCS346</title>
+    <style>
+        *{
+            margin: 0;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            border: 1px solid transparent;
+            padding-left: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 0.3s ease;
+           
+        }
+        nav:hover{
+            background-color: azure;
+            color: aqua;
+            
+        }
+       .logo{
+            text-shadow: 2px 2px 2px rgb(251, 7, 7);
+            border-bottom: 3rem solid transparent;
+            border: 5px solid transparent;
+            transform: 0.3s ease;
+            
+        }
+        .logo:hover{
+            background-color: aqua;
+        }
+        li a{
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        li{
+            line-height: 1.8rem;
+            border: 1px solid transparent;
+            font-size: 1.1rem;
+            font-weight: 400;
+            transition: 0.3s ease-out;
+        }
+        li a:hover{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+        .header{
+            background-color: aqua;
+            padding-inline-start: 4rem 12%;
+            text-align: center;
+            top: 0;
+            left: 0
+            width:100%;
+        }
+        footer{
+            background-color: rgba(79, 64, 64, 0.205);
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+        .explist{
+            min-width: max-content;
+            background-color: aliceblue;
+        }
+        .exp{
+            display:inline-block;
+            justify-content: center;
+            padding-left: 1.3em;
+            border: 1.5px solid red;
+            background-color: rgb(191, 248, 191);
+            line-height: 1.5rem;
+            width: 50%;
+            overflow: auto;
+            
+        }
+          img{
+             display:inline-block;
+             width: 40%; 
+             
+             vertical-align: top;
+          } 
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+        <a href="index.html">Back</a>
+    </nav>
+         <h1>Exploratory Data Analysis</h1>
+         <h3>Subject Code: CCS346</h3>
+    </header>
+    <section>
+        <div class="explist">
+        <h1 class="logo" id="top">Lab Experiments</h1>
+        <ol>
+        <li><a href="#exp1">Install The data analysis and visualization tool :R/Python/tableau public/power bi</a> </li>
+        <li><a href="#exp2">PERFORM EXPLORATORY DATA ANALYSIS (EDA)WITH DATASETS LIKE EMAIL DATA SET</a> </li>
+        <li><a href="#exp3">WORKING WITH NUMPY ARRAYS, PANDAS DATA FRAMES, BASIC PLOTS USING MATPLOTLIB</a> </li> 
+        <li><a href="#exp4">EXPLORE VARIOUS VARIABLE AND ROW FILTERS IN R FOR CLEANING DATA</a> </li>
+        
+    </ol>
+</div>
+             <h3 id="exp1">1st Exp</h3>
+            </p> <a class="top" href="#top">top</a></p>
+    <div class="exp" >
+            <p > 
+                
+              import pandas as pd <br>
+              import matplotlib.pyplot as plt<br>
+             #Sample data (you can replace this with your own dataset) <br>
+              data = {
+              'Name': ['John', 'Jane', 'Mike', 'Emily', 'Alex'], <br>
+               'Age': [25, 30, 22, 28, 35],<br>
+              'Score': [90, 85, 78, 95, 88]
+              }<br>
+              # Create a DataFrame from the data <br>
+              df = pd.DataFrame(data)<br>
+              # Display the DataFrame <br>
+              print("DataFrame:") <br>
+             print(df)<br>
+              # Data Analysis <br>
+              print("\nData Analysis:")<br>
+              print("Mean Age:", df['Age'].mean())<br>
+              print("Maximum Score:", df['Score'].max())<br>
+              print("Minimum Score:", df['Score'].min())<br>
+              # Data Visualization<br>
+              plt.figure(figsize=(8, 4)) <br>
+              plt.bar(df['Name'], df['Score']) <br>
+              plt.xlabel('Name') <br>
+              plt.ylabel('Score') <br>
+              plt.title('Scores of Students') <br>
+              plt.show()
+            </p>
+              
+              
+            </div>
+            <img src="1st exp op eda.png" alt="output">
+            
+                
+            
+                <h3 id="exp2" style="background-color: rgb(229, 252, 252);">2nd Exp</h3>
+            </p> <a class="top" href="#top">top</a></p>
+                  <div class="exp">
+                      <p>
+                        import pandas as pd    <br>
+                        data = {   <br>
+                        'sender': ['alice@example.com', 'bob@example.com', 'alice@example.com'],    <br>
+                        'receiver': ['bob@example.com', 'alice@example.com', 'carol@example.com'],  <br> 
+                        'subject': ['Hello', 'Meeting Reminder', 'Project Update'],   <br>
+                        'timestamp': ['2023-08-01 10:00:00', '2023-08-02 14:30:00', '2023-08-03 09:15:00'],   <br>
+                        'content': ['Hi Bob,\n\nHow are you?', 'Hi Alice,\n\nDon\'t forget the meeting at 3 PM.', 'Hi    
+                        Carol,\n\nHere\'s the latest project update.']
+                        }<br>
+                        df = pd.DataFrame(data)<br>
+                        df['timestamp'] = pd.to_datetime(df['timestamp']) <br>
+                        df.to_csv('emails.csv', index=False)<br>
+                        print("CSV file created successfully.") <br>
+                        import pandas as pd<br>
+                        import matplotlib.pyplot as plt <br>
+                        import seaborn as sns<br>
+                        df = pd.read_csv("emails.csv")<br>
+                        print(df.info())<br>
+                        df['timestamp'] = pd.to_datetime(df['timestamp']) <br>
+                        df.dropna(inplace=True)<br>
+                        df['email_length'] = df['content'].apply(len) <br>
+                        plt.figure(figsize=(10, 6))<br>
+                        sns.histplot(data=df, x='email_length', bins=30, kde=True) <br>
+                        plt.xlabel('Email Length')<br>
+                        plt.ylabel('Count')<br>
+                        plt.title('Distribution of Email Lengths') <br>
+                        plt.show()<br>
+                        top_senders = df['sender'].value_counts()[:10] <br>
+                        top_receivers = df['receiver'].value_counts()[:10] <br>
+                        plt.figure(figsize=(12, 6)) <br>
+                        sns.barplot(x=top_senders.index, y=top_senders.values) <br>
+                        plt.xticks(rotation=45)<br>
+                        plt.xlabel('Sender') <br>
+                        plt.ylabel('Number of Emails') <br>
+                        plt.title('Top 10 Email Senders') <br>
+                        plt.tight_layout()<br>
+                        plt.show()<br>
+                        df['year_month'] = df['timestamp'].dt.to_period('M') <br>
+                        email_activity = df.groupby('year_month').size() <br>
+                        plt.figure(figsize=(12, 6)) <br>
+                        email_activity.plot(kind='line')<br>
+                        plt.xlabel('Year-Month') <br>
+                        plt.ylabel('Number of Emails') <br>
+                        plt.title('Email Activity Over Time') <br>
+                        plt.xticks(rotation=45) <br>
+                        plt.tight_layout()<br>
+                        plt.show()<br>
+                        
+                      </p>
+                  </div>
+                  <img src="2eda.png" alt="">
+                  <h3 id="exp3" style="background-color: beige;">3rd Exp</h3>
+                </p> <a class="top" href="#top">top</a></p>
+                  <div class="exp">
+                         <p>
+                            <b>1.NUMPY ARRAYS </b><br>
+                            import numpy as np <br>
+                            arr=np.array([[1,2,3],[4,2,5]]) <br>
+                            print("Array is of type:",type(arr)) <br>
+                            print("No of dimensions:",arr.ndim) <br>
+                            print("Shape of array:",arr.shape) <br>
+                            print("Size of array:",arr.size)<br>
+                            print("Array stores elements of type:",arr.dtype)<br><br>
+                            import numpy as np <br>
+                            a=np.array([[1,2,3],[3,4,5],[4,5,6]])<br>
+                            print(a)<br>
+                            print("After Slicing") <br>
+                            print(a[1:])<br><br>
+                            import numpy as np <br>
+                            a=np.array([[1,2,3],[3,4,5],[4,5,6]])<br>
+                            print('Our array is:') <br>
+                            print(a)<br>
+                            print('The items in the second column are:') <br>
+                            print(a[...,1])<br>
+                            print('\n')<br>
+                            print('The items in the second row are:') <br>
+                            print(a[1,...])<br>
+                            print('\n')<br>
+                            print('The items column 1 onwards are:') <br>
+                            print(a[...,1])<br><br>
+                            <b>2)PANDAS DATAFRAMES</b><br>
+                            import numpy as np <br>
+                            import pandas as pd<br>
+                            data=np.array([['Col1','Col2'],['Row1',1,2],['Row2',3,4]]) <br>
+                            print(pd.DataFrame(data=data[1:,1:],index=data[1:,0],columns=data[0,1:])) <br>
+                            my_2darray=np.array([[1,2,3],[4,5,6]])<br>
+                            print(pd.DataFrame(my_2darray)) <br>
+                            my_dict={1:['1','3'],2:['1','2'],3:['2','4']}<br>
+                            print(pd.DataFrame(my_dict)) <br>
+                            my_df=pd.DataFrame(data=[4,5,6,7],index=range(0,4),columns=['A']) <br>
+                            print(pd.DataFrame(my_df)) <br>
+                            my_series=pd.Series({"UnitedKingdom":"London","India":"NewDelhi","United 
+                            States":"Washington","Belgium":"Brussels"})<br>
+                            print(pd.DataFrame(my_series)) <br>
+                            df=pd.DataFrame(np.array([[1,2,3],[4,5,6]]))<br>
+                            print(df.shape)<br>
+                            print(len(df.index))<br>
+                            <b>3)BASIC PLOT USING MATPLOTLIB</b><br>
+                            import matplotlib.pyplot as plt <br>
+                            x=[1,2,3]<br>
+                            y=[2,4,1]<br>
+                            plt.plot(x,y) <br>
+                            plt.xlabel('x-axis') <br>
+                            plt.ylabel('y-axis') <br>
+                            plt.title('My first graph') <br>
+                            plt.show()<br><br>
+                            import matplotlib.pyplot as plt <br>
+                            a=[1,2,3,4,5] <br>
+                            b=[0,0.6,0.2,15,10,8,16,21]<br>
+                            plt.plot(a) <br>
+                            plt.plot(b,"or")<br>
+                            plt.plot(list(range(0,22,3))) <br>
+                            plt.xlabel('Day->') <br>
+                            plt.ylabel('Temp->') <br>
+                            c=[4,2,6,8,3,20,13,15]<br>
+                            plt.plot(c,label='4th Rep') <br>
+                            ax=plt.gca() <br>
+                            ax.spines['right'].set_visible(False) <br>
+                            ax.spines['top'].set_visible(False) <br>
+                            ax.spines['left'].set_bounds(-3,40) <br>
+                            plt.xticks(list(range(-3,10))) <br>
+                            plt.yticks(list(range(-3,20,3)))<br>
+                            import matplotlib.pyplot as plt <br>
+                            a=[1,2,3,4,5] <br>
+                            b=[0,0.6,0.2,15,10,8,16,21]<br>
+                            c=[4,2,6,8,3,20,13,15]<br>
+                            fig=plt.figure(figsize=(10,10)) <br>
+                            sub1=plt.subplot(2,2,1) <br>
+                            sub2=plt.subplot(2,2,2) <br>
+                            sub3=plt.subplot(2,2,3) <br>
+                            sub4=plt.subplot(2,2,4) <br>
+                            sub1.plot(a,'sb') <br>
+                            sub1.set_xticks(list(range(0,10,1))) <br>
+                            sub1.set_title('ist Rep') <br>
+                            sub2.plot(b,'or') <br>
+                            sub2.set_xticks(list(range(0,10,2))) <br>
+                            sub2.set_title('2nd Rep') <br>
+                            sub3.plot(list(range(0,22,3)),'vg') <br>
+                            sub3.set_xticks(list(range(0,10,1))) <br>
+                            sub3.set_title('3rd Rep') <br>
+                            sub4.plot(c,'Dm') <br>
+                            sub4.set_yticks(list(range(0,24,2))) <br>
+                            sub4.set_title('4th Rep')<br>
+                            plt.show()<br>
+                            
+                            <img src="3rd1.png" alt="">
+                            <img src="3rd2.png" alt="">
+                            <img src="3rd3.png" alt="">
+                            <img src="3rd4.png" alt="">
+                            <img src="3rd5.png" alt="">
+
+                         </p>
+                  </div>
+                  <h3 style="background-color: beige;" id="exp4">4th Exp</h3><p></p> <a class="top" href="#top">top</a></p>
+                  <div class="exp">
+                    <p>
+                        import pandas as pd <br>
+                        import numpy as np <br>
+                        data = {<br>
+                        'ID': range(1, 11),<br>
+                        'Age': np.random.randint(18, 65, size=10),<br>
+                        'Income': np.random.randint(30000, 90000, size=10),<br>
+                        'Gender': ['Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Male'],<br>
+                        'Education': ['High School', 'Bachelor', 'Master', 'PhD', 'Bachelor', 'Master', 'Bachelor', 'PhD', <br>
+                        'High School', 'Master']<br>
+                        }<br>
+                        df = pd.DataFrame(data) <br>
+                        print(df.head()) <br>
+                        print(df.describe())<br>
+                        print(df.isnull().sum())<br>
+                        print(df['Education'].unique()) <br>
+                        selected_columns = df[['Age', 'Income']] <br>
+                        print(selected_columns.head()) <br>
+                        filtered_data = df[df['Age'] > 30] <br>
+                        print(filtered_data.head())<br>
+                        filtered_rows = df[(df['Gender'] == 'Male') & (df['Education'] == 'Master')] <br>
+                        print(filtered_rows.head())<br>
+                        import matplotlib.pyplot as plt <br>
+                        plt.hist(df['Age'], bins=5, edgecolor='black') <br>
+                        plt.title('Age Distribution')<br>
+                        plt.xlabel('Age') <br>
+                        plt.ylabel('Frequency') <br>
+                        plt.show() <br>
+                        plt.boxplot(df['Income']) 
+                        plt.title('Income Distribution') <br>
+                        plt.ylabel('Income')<br>
+                        plt.show()<br>
+                        gender_counts = df['Gender'].value_counts() <br>
+                        gender_counts.plot(kind='bar', color='skyblue') <br>
+                        plt.title('Gender Distribution') <br>
+                        plt.xlabel('Gender')<br>
+                        plt.ylabel('Count') <br>
+                        plt.show()<br>
+                        education_counts = df['Education'].value_counts()<br>
+                        education_counts.plot(kind='pie', autopct='%1.1f%%', colors=['gold', 'lightcoral', 'lightgreen', 
+                        'lightskyblue'])<br>
+                        plt.title('Education Distribution') <br>
+                        plt.ylabel('')<br>
+                        plt.show()<br>
+                    </p>
+                  </div>
+                 
+    </section>
+    <footer>
+        &copy;Aravind ,2024 All rights reserved
+    </footer>
+</body>
+</html>
