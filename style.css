@@ -24,9 +24,6 @@
     align-items: center;
     z-index: 100;
     backdrop-filter: blur(10px);
-   
-   
-
     
 }
 
@@ -40,7 +37,7 @@
     
 }
 .logo:hover{
-    transform:scale(1);
+    transform:scale(1.1);
 }
 
 .navbar a{
@@ -53,11 +50,12 @@
     
 }
 .navbar a:hover{
-    color: rgba(0, 255, 8, 0.787);
+    color: rgba(0, 140, 255, 0.787);
     border-bottom: 3px solid rgb(59, 248, 6);
+    text-shadow: 2px 2px 2px rgba(69, 69, 242, 0.821);
 }
 .home{
-    padding:20rem;
+    padding:10rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +63,7 @@
     gap: 10px;
 }
 .home h1{
-    font-size: 7rem;
+    font-size: 6rem;
     color: var(--main-color);
 }
 span{
@@ -79,8 +77,8 @@ img{
     transition: all;
 }
 img:hover{
-    box-shadow:  0 0 25px red,
-                 0 0 50px red;
+    box-shadow:  0 0 25px rgb(255, 0, 234),
+                 0 0 50px rgb(255, 0, 170);
 
 }
 #subjects{
@@ -89,7 +87,7 @@ img:hover{
 !--comments 
 /* Style the dropdown button */
 .dropbtn {
-    background-color: #3498db;
+    background-color: #3498db00;
     color: rgb(237, 224, 224);
     padding: 1px;
     font-size: 16px;
@@ -107,27 +105,27 @@ img:hover{
 .dropdown-content {
     display:none;
     position: absolute;
-    background-color: #030303e3;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: transparent;
+    min-width: fit-content;
+    box-shadow: 0px 0px 50px  rgb(1, 213, 255);
     z-index: 1;
-    font-size:2rem;
+    font-size:1rem;
     max-height:max-content;
-    overflow-y: auto;
+    overflow: auto;
     
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: rgb(255, 255, 255);
-    padding: 2px 16px;
+    color: rgb(33, 227, 241);
+    padding: 1.3px 1px;
     text-decoration: none;
     display: block;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #171b13;
+    background-color: #060606;
 }
 
 /* Show the dropdown menu when the user hovers over the dropdown button */
@@ -153,4 +151,5 @@ img:hover{
 }
 body{
     overflow: auto;
+    background-color: black;
 }

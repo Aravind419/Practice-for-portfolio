@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSD</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+      
+         .header{
+            background-color: rgb(78, 161, 161);
+            padding: 1.3rem;
+            width: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 1.7rem;
+            position: fixed;
+            backdrop-filter: blur(10px);
+            
+         }
+         section{
+            padding: 10rem 12%;
+         }
+         .back{
+           
+            float: left;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 1rem;
+            color: black;
+            transition: 0.3s ease-in-out;
+            border: 3px solid black;
+            border-radius: 15px;
+            padding: 3px;
+            box-shadow: 0px 0px 10px;
+           
+         }
+         .back:hover{
+             border: 3px solid red;
+             color: red;
+             background-color: black;
+             box-shadow: 0px 0px 10px black,
+                         0px 0px 20px black;
+         }
+         .explist{
+             list-style-type: none;
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-around;
+             margin-top: 3rem;
+             padding-left: 4rem;
+             font-size: 1.2rem;
+             font-weight: 600;
+             
+             
+         }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a class="back" href="index.html">Go Back</a>
+        <h1>Full Stack Web Development</h1><br>
+        <h2>Subject Code: IT3501</h2>
+    </header>
+    <section>
+      <h1>Lab Experiments</h1>
+      <div class="explist">
+        <ol>
+            <li><a href="#exp1">Develop a portfolio website for yourself, which gives about yourself for a potential recruiter.</a></li>
+            <li><a href="#exp2">Create a web application to manage the to do list of users where users can login and manage their to do items.</a></li>
+            <li><a href="#exp3">Create a simple microblogging application that allow people to post their content, which can be viewed by people who follow them.</a></li>
+        </ol>
+      </div>
+      <h2 id="exp3">3rd Exp</h2>
+      <div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Sharing - Microblogging App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .code-container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .code-card {
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .card-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="code-container">
+        <div class="code-card">
+            <div class="card-title">Index.html</div>
+            <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;title&gt;Microblogging App&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Microblogging App&lt;/h1&gt;
+        &lt;form id="postForm"&gt;
+            &lt;textarea id="postContent" placeholder="What's on your mind?"&gt;&lt;/textarea&gt;
+            &lt;button type="submit"&gt;Post&lt;/button&gt;
+        &lt;/form&gt;
+        &lt;div id="feed"&gt;
+            &lt;!-- Posted content will be dynamically added here --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+    <footer>
+        
+        <pre>&lt;footer&gt;
+    &lt;p&gt;Copyright &copy; 2024 K. Aravind. All rights reserved.&lt;/p&gt;
+&lt;/footer&gt;</pre>
+    </footer>
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+        <div class="code-card">
+            <div class="card-title">Styles.css</div>
+            <pre>body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#feed {
+    margin-top: 20px;
+}</pre>
+        </div>
+        <div class="code-card">
+            <div class="card-title">Script.js</div>
+            <pre>document.addEventListener('DOMContentLoaded', function() {
+    const postForm = document.getElementById('postForm');
+    const postContent = document.getElementById('postContent');
+    const feed = document.getElementById('feed');
+
+    postForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const content = postContent.value;
+        const newPost = document.createElement('div');
+        newPost.classList.add('post');
+        newPost.textContent = content;
+        feed.appendChild(newPost);
+        postContent.value = '';
+    });
+});</pre>
+        </div>
+    </div>
+</body>
+</html>
+
+       
+            
+      </div>
+      
+      
+        
+    </section>
+    
+</body>
+</html>
