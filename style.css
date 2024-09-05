@@ -29,6 +29,7 @@
 
 .navbar a{
     color: var(--text-color);
+    flex-wrap: wrap;
 }
 .logo{
     font-size: 1.6rem;
